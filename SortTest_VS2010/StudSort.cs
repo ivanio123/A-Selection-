@@ -26,24 +26,23 @@ namespace SortTest
 
         public static ValueType[] Sort(ValueType[] data) // DON'T CHANGE this line!!!
         {
-            //ValueType min, temp;
             for (int i = 0; i < data.Length - 1; i++)
             {
-                ValueType min = i;
+                int minIndex = i;
 
                 for (int j = i + 1; j < data.Length; j++)
                 {
-                    if (data[j] < data[min])
+                    if (data[j] < data[minIndex])
                     {
-                        min = j;
+                        minIndex = j;
                     }
                 }
         
-                if (min != i)
+                if (minIndex != i)
                 {
                     ValueType temp = data[i];
-                    data[i] = data[min];
-                    data[min] = temp;
+                    data[i] = data[minIndex];
+                    data[minIndex] = temp;
                 }
             }
             // Add code which actually sorts.
